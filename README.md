@@ -1,6 +1,13 @@
-# client
+## Development Setup
+
+### client
 
 ## Project setup
+```
+cd client
+```
+
+## install dependencies
 ```
 npm install
 ```
@@ -15,14 +22,21 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
+# server
+
+## Project setup
 ```
-npm run test
+cd server
 ```
 
-### Lints and fixes files
+## install dependencies
 ```
-npm run lint
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run dev
 ```
 
 ### Customize configuration
