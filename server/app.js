@@ -1,18 +1,13 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express')
+const morgan = require('morgan')
 
 const { notFound, errorHandler } = require('./middlewares');
 
-var app = express();
+const app = express();
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-
-//Our routes go here...
+app.use(morgan('dev'))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 app.get('/', (req, res) => {
     res.json({
@@ -23,4 +18,6 @@ app.get('/', (req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-module.exports = app;
+app.listen(3000, () =>
+    console.log('Forum API is listening on port 3000!'),
+);
